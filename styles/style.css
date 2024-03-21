@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 body {
-    
     background-color: #f3f5fc;
 }
+
 .container {
     margin: 0 auto;
-    background-color: #f3f5fc;
-    width: 759px;
+    width: 1080px;
     display: flex;
     flex-direction: row;
+    background-color: #f3f5fc;
 }
 
 .logo {
@@ -26,10 +26,11 @@ body {
 }
 
 .formulario > textarea {
-    background-color: #f3f5fc;
     margin-top: 168px;
     width: 480px;
     height: 610px;
+    resize: none;
+    background-color: #f3f5fc;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 48px;
@@ -50,19 +51,19 @@ textarea:focus {
     color: #495057;
 }
 .resultado {
+    margin-left: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 40px;
 }
 
 .resultado__textoCriptografado {
-    background-color: white;
     margin-top: 40px;
     padding: 40px;
-    width: 240px;
+    width: 300px;
     height: 650px;
+    background-color: white;
     overflow: auto;
     text-overflow: "...";
     font-family: "Inter", sans-serif;
@@ -77,10 +78,10 @@ textarea:focus {
 }
 
 button {
-    background-color: #f3f5fc;
     margin-top: 8px;
     width: 220px;
     height: 67px;
+    background-color: #f3f5fc;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -100,7 +101,6 @@ button {
 
 .btnCopiar:hover {
     background-color: #ffffff;
-    /* color: white; */
 }
 
 .btn_descriptografar:hover {
@@ -117,13 +117,14 @@ button {
     color: white;
 }
 
-
 footer {
-    width: 1440px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin: 50px auto;
     font-family: "Inter", sans-serif;
     font-weight: 400;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
+    font-size: 16px;
+    font-style: italic;
+    color: #485c70;
 }
