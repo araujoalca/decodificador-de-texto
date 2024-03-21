@@ -19,6 +19,7 @@ function inicializar() {
         var textoSemAcentos = removerAcentos(textoAtual);
         var textoConvertido = textoSemAcentos.toLowerCase();
         this.value = removerCaracteresEspeciais(textoConvertido);
+        this.value = removerNumeros(this.value);
         this.setSelectionRange(start, end);
 
         // Oculta o resultado sempre que houver modificação no textarea
@@ -30,6 +31,16 @@ function inicializar() {
         } else {
             btn_criptografar.disabled = true;
             btn_descriptografar.disabled = true;
+        }
+    });
+
+
+    textoInicial.addEventListener("keypress", function(event) {
+        const charCode = event.charCode;
+    
+        // Verifica se o código do caractere digitado está na faixa de códigos de números
+        if (charCode >= 48 && charCode <= 57) {
+            event.preventDefault();
         }
     });
 
@@ -60,8 +71,13 @@ function mostrarResultado(texto) {
 
     btnCopiar.addEventListener("mouseover", function() {
         const textoCopiar = textoCriptografado.textContent;
-        const dezPrimeirosCaracteres = textoCopiar.substring(0, 10);
-        this.textContent = dezPrimeirosCaracteres;
+        const maxCaracteres = 12;
+        if (textoCopiar.length <= maxCaracteres) {
+            this.textContent = textoCopiar;
+            return;
+        }
+        const primeirosCaracteres = textoCopiar.substring(0, maxCaracteres);
+        this.textContent = primeirosCaracteres + '...';
     });
 
     btnCopiar.addEventListener("mouseout", function() {
@@ -71,7 +87,7 @@ function mostrarResultado(texto) {
     btnCopiar.addEventListener("click", function() {
         copiarTexto();
     });
-    
+
 }
 
 function copiarTexto(texto) {
@@ -87,6 +103,10 @@ function copiarTexto(texto) {
 
 function removerAcentos(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function removerNumeros(texto) {
+    return texto.replace(/[0-9]/g, '');
 }
 
 function removerCaracteresEspeciais(texto) {

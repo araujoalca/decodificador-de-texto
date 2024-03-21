@@ -7,28 +7,28 @@ body {
 .container {
     margin: 0 auto;
     background-color: #f3f5fc;
-    width: 1440px;
+    width: 759px;
     display: flex;
     flex-direction: row;
 }
 
 .logo {
-    margin-left: 40px;
+    margin-left: 10px;
 }
 
 .logo > img {
-    margin-top: 40px;
+    margin-top: 15px;
     width: 120px;
 }
 
 .formulario {
-    margin-left: 80px;
+    margin-left: 40px;
 }
 
 .formulario > textarea {
     background-color: #f3f5fc;
     margin-top: 168px;
-    width: 680px;
+    width: 480px;
     height: 610px;
     font-family: "Inter", sans-serif;
     font-weight: 400;
@@ -54,15 +54,17 @@ textarea:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 80px;
+    margin-left: 40px;
 }
 
 .resultado__textoCriptografado {
     background-color: white;
     margin-top: 40px;
     padding: 40px;
-    width: 400px;
+    width: 240px;
     height: 650px;
+    overflow: auto;
+    text-overflow: "...";
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 24px;
@@ -77,7 +79,7 @@ textarea:focus {
 button {
     background-color: #f3f5fc;
     margin-top: 8px;
-    width: 328px;
+    width: 220px;
     height: 67px;
     font-family: "Inter", sans-serif;
     font-weight: 400;
