@@ -51,11 +51,27 @@ function inicializar() {
 
 
 function mostrarResultado(texto) {
-    let resultado = document.querySelector('.resultado');
+    // let resultado = document.querySelector('.resultado');
     let textoCriptografado = document.querySelector('.resultado__textoCriptografado');
+    let btnCopiar = document.querySelector('.btnCopiar');
 
     textoCriptografado.innerHTML = texto;
     // resultado.style.display = 'block';
+
+    btnCopiar.addEventListener("mouseover", function() {
+        const textoCopiar = textoCriptografado.textContent;
+        const dezPrimeirosCaracteres = textoCopiar.substring(0, 10);
+        this.textContent = dezPrimeirosCaracteres;
+    });
+
+    btnCopiar.addEventListener("mouseout", function() {
+        this.textContent = "Copiar";
+    });
+
+    btnCopiar.addEventListener("click", function() {
+        copiarTexto();
+    });
+    
 }
 
 function copiarTexto(texto) {
