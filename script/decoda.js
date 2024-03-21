@@ -1,11 +1,10 @@
 function inicializar() {
-    let resultado = document.querySelector('.resultado');
+    let resultado__textoCriptografado = document.querySelector('.resultado__textoCriptografado');
     let textoInicial = document.querySelector('textarea');
     let btn_criptografar = document.querySelector('.btn_criptografar');
     let btn_descriptografar = document.querySelector('.btn_descriptografar');
     let btn_copiar = document.querySelector('.btnCopiar');
     
-    // resultado.style.display = 'none';
     textoInicial.value = '';
     textoInicial.focus();
     btn_criptografar.disabled = true;
@@ -22,8 +21,7 @@ function inicializar() {
         this.value = removerNumeros(this.value);
         this.setSelectionRange(start, end);
 
-        // Oculta o resultado sempre que houver modificação no textarea
-        // resultado.style.display = 'none'; 
+        resultado__textoCriptografado.innerHTML = ''; 
 
         if (textoAtual.trim().length > 0) {
             btn_criptografar.disabled = false;
@@ -34,15 +32,7 @@ function inicializar() {
         }
     });
 
-
-    textoInicial.addEventListener("keypress", function(event) {
-        const charCode = event.charCode;
     
-        // Verifica se o código do caractere digitado está na faixa de códigos de números
-        if (charCode >= 48 && charCode <= 57) {
-            event.preventDefault();
-        }
-    });
 
     btn_criptografar.addEventListener("click", function (event) {
         // document.querySelector('.resultado__titulo').innerHTML = "Texto Criptografado";
