@@ -36,6 +36,10 @@ body {
     border: none;
 }
 
+textarea:focus {
+    outline: none;
+}
+
 .info {    
     padding-left: 20px;
     height: 18px;
@@ -57,7 +61,7 @@ body {
     margin-top: 40px;
     padding: 40px;
     width: 400px;
-    height: 944px;
+    height: 850px;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 24px;
@@ -65,11 +69,18 @@ body {
     border-radius: 32px;
 }
 
+textarea:focus {
+    outline: none;
+}
+
 button {
     background-color: #f3f5fc;
     margin-top: 8px;
     width: 328px;
     height: 67px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
     color: #0A3871;
     border: 1px solid #0A3871;
     border-radius: 24px;
@@ -87,6 +98,7 @@ button {
 
 
 footer {
+    width: 1440px;
     margin: 50px 0 80px 0;
     font-family: "Inter", sans-serif;
     font-weight: 400;
